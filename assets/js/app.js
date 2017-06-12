@@ -7,8 +7,10 @@ var cargarPagina = function (){
 var cargarPersonajes = function () {
 
 var url = 'http://swapi.co/api/people/';
-$.get (url, function (response) {
+$.getJSON(url, function (response) {
   console.log(response);
+  // La diferencia con .get es que siempre se obtiene data, usualmente se utiliza para cuando no sabemos que tipo de informacion vamos a obtener.
+   // $.getJSON, solamente esperamos informacion tipo JSON. 
 
   var personajes = response.results;
   var total = response.count;
